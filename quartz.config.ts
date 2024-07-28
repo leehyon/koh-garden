@@ -23,7 +23,7 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: "DM Serif Display",
-        body: "Bricolage Grotesque",
+        body: "Noto Sans Display",
         code: "JetBrains Mono",
       },
       colors: {

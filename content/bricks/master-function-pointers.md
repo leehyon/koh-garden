@@ -2,8 +2,8 @@
 title: Master Function Pointers
 draft: false
 tags:
-  - c
   - pointer
+  - gist
 ---
 
 💡 _The post is primarily inspired by [this article](http://vandervoord.net/blog/2015/6/2/making-function-pointers-usable-in-c), click to read more._

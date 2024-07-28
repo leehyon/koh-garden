@@ -19,9 +19,10 @@ This section provides answers to commonly asked questions about Git.
 
 ## Git rebase
 
+> [!danger]
+> Using git rebase will change the commit IDs (hashes) of the rebased commits. 
+
 > [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
-
-
 
 When we use `git rebase` and we are already on the branch which we want to rebase, we can skip a second argument. We can do:
 

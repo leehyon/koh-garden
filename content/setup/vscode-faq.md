@@ -26,8 +26,9 @@ VS Code supports variable substitution in **Debugging** and **Task** configurati
 
 - You can reference VS Code settings ("configurations") through `${config:Name}` syntax (for example, `${config:editor.fontSize}`).
 
-## Define and use custom variables
+## How to define and use custom variables
 
-You can use environment variables and reference them using `${env:VARIABLE_NAME}`.
+There are two methods: 
 
-You can however add custom settings in `settings.json`, and reference those in `tasks.json` using `${config:myCustomVariable}`.
+1. Define your environment variables and reference them using `${env:VARIABLE_NAME}`.
+2. Add custom settings in `settings.json`, and reference those in `tasks.json` using `${config:myCustomVariable}`.

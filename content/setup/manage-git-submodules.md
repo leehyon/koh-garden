@@ -2,7 +2,7 @@
 title: Manage Git Submodules
 draft: false
 tags:
-- git
+    - git
 ---
 
 > [!important]
@@ -44,7 +44,7 @@ Once submodules are properly initialized and updated within a parent repository 
 
 If you are working in a team environment it is critical that you then `git push` the submodule updates, and the parent repository updates.
 
-## Alternative to submodule
+## Alternatives to submodule
 
 > Which is best for you depends on your needs, desires, and workflow. They are in some senses semi-isomorphic, it is just some are a lot easier to use than others for specific tasks.
 > - [gitslave](http://gitslave.sf.net/) is useful when you control and develop on the subprojects at more of less the same time as the superproject, and furthermore when you typically want to tag, branch, push, pull, etc all repositories at the same time. gitslave has never been tested on windows that I know of. It requires perl.

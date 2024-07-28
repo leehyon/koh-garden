@@ -2,7 +2,6 @@
 title: C Bit Fields
 draft: false
 tags:
-  - c
   - gist
 ---
 

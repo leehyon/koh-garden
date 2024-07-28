@@ -3,7 +3,6 @@ title: Rust for Windows
 draft: false
 tags:
   - rust
-  - setup
   - windows
 ---
 

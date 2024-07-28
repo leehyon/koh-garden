@@ -2,8 +2,7 @@
 title: Setup Web Development
 draft: false
 tags:
-  - javascript
-  - setup
+  - web
 ---
 
 This is a guide for configuring your local machine for general web development.
@@ -27,11 +26,6 @@ In summary, ==React handles UI== while ==Node.js handles server-side logic==. Th
 ## Scope
 
 Essentially, there are two different philosophies that define your setup as a web developer. While there are developers who prefer to have all their tooling in one Integrated Development Environment (IDE), there are developers who prefer to use multiple lightweight tools (e.g. editor/IDE, standalone terminal) and combine them for their purposes.
-
-Install the following tools:
-
-- Node.js and npm: to execute JavaScript code and install JavaScript libraries
-- VS Code: editor to write code, integrated terminal to execute code
 
 ## General steps
 

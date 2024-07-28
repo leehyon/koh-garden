@@ -2,8 +2,8 @@
 title: Understand Function Pointers
 draft: false
 tags:
-  - c
   - pointer
+  - gist
 ---
 
 Function pointers allow you to pass around and call functions like regular variables. They are powerful but can be confusing at first. This post will walk through how to declare, use, and pass function pointers in C.

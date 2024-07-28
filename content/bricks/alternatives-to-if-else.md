@@ -2,7 +2,6 @@
 title: Alternatives to If-Else
 draft: false
 tags:
-  - c
   - gist
 ---
 

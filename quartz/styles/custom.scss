@@ -64,11 +64,11 @@ body[data-slug="thoughts/craft"] {
     grid-column: 1 / 3;
   }
 
-  .recent-notes:nth-last-child(2) {
+  .recent-notes:nth-last-child(1) {
     grid-area: 3 / 1 / 3 / 3;
   }
 
-  .recent-notes:nth-last-child(1) {
+  .recent-notes:nth-last-child(2) {
     grid-area: 4 / 1 / 4 / 3;
   }
 

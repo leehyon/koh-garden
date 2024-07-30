@@ -17,10 +17,20 @@ This section provides answers to commonly asked questions about Git.
 
 > [Git config with multiple identities and multiple repositories](https://gist.github.com/bgauduch/06a8c4ec2fec8fef6354afe94358c89e)
 
+## Git merge
+
+`git merge`
+
+By default, Git will try to perform a "fast-forward" merge if possible. A fast-forward merge simply moves the source branch reference forward to the target branch's latest commit, which maintains a linear history.
+
+`git merge --no-ff`
+
+This option `--no-ff` ensures that a merge commit is always created, even if the merge could be performed with a fast-forward. This helps keep the project's history more explicit and can make later code reviews or debugging easier.
+
 ## Git rebase
 
 > [!danger]
-> Using git rebase will change the commit IDs (hashes) of the rebased commits. 
+> Using git rebase will change the commit IDs (hashes) of the rebased commits.
 
 > [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
@@ -39,6 +49,9 @@ A---B---C---F---G (main)      A---B---C---F---G (main)
           D---E (HEAD feature)                  D'---E' (HEAD feature)
 ```
 
+> [!danger]
+> Rebase changes commit hashes, D' and E' are new commits with different hashes from D and E.
+
 ## Remove changes
 
 - `git reset --hard` removes staged and working directory changes.
@@ -47,7 +60,7 @@ A---B---C---F---G (main)      A---B---C---F---G (main)
 
 ## Delete branches
 
-When you delete a local Git branch, it does not automatically delete the corresponding remote branch. The local and remote branches are managed separately, and deleting one does not affect the other. 
+When you delete a local Git branch, it does not automatically delete the corresponding remote branch. The local and remote branches are managed separately, and deleting one does not affect the other.
 
 Deleting local branches
 
@@ -121,4 +134,43 @@ git stash -a # also includes ignored files
 
 > [!note]
 > The stash is local to your Git repository; stashes are not transferred to the server when you push.
-> It's recommended to use descriptive messages when creating stashes to easily identify them later
+> It's recommended to use descriptive messages when creating stashes to easily identify them later.
+
+## Delete "dangling" commits
+
+While the commits after the reset point are no longer part of the branch's linear history, they still exist in the Git repository. They become "dangling" commits, which means they are not directly referenced by any branch.
+
+```shell
+# Step 1: Verify unreachable commits
+git fsck --unreachable
+
+# Step 2: Expire unreachable commits
+git reflog expire --expire-unreachable=now --all
+
+# Step 3: Run garbage collection
+git gc --prune=now
+
+# Step 4: Verify cleanup
+git fsck --unreachable
+```
+
+> [!tip]
+> If the commits are still reachable due to tags, branches, or other references, you need to delete those references first.
+
+For remote repositories, you may need to force-push the changes to ensure the remote history is updated:
+
+```shell
+git push origin --force
+```
+
+## Create a tag
+
+To merge your release branch into the main branch and create a tag, follow these steps:
+
+```shell
+git checkout main
+git merge --no-ff release-branch-name
+git tag -a v0.0.1
+git push origin main
+git push origin v0.0.1
+```

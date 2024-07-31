@@ -3,7 +3,7 @@ title: ChatGPT Prompts
 draft: false
 date: 2023-06-27
 tags:
-  - chatgpt
+  - gpt
 ---
 
 A ChatGPT prompt is a phrase or instruction you give the ChatGPT AI model to generate a response. Using prompts can help obtain the desired answer, just like how to ask better questions.

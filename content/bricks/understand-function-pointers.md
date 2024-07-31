@@ -1,6 +1,7 @@
 ---
 title: Understand Function Pointers
 draft: false
+date: 2024-06-17
 tags:
   - pointer
   - gist

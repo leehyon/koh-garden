@@ -1,6 +1,7 @@
 ---
 title: Rust for Windows
 draft: false
+date: 2024-07-10
 tags:
   - rust
   - windows
@@ -35,7 +36,7 @@ While installing Visual Studio, there are several Windows workloads that we reco
 
 - `.NET desktop development`, 
 - `Desktop development with C++`, and 
-- `Universal Windows Platform development`. 
+- `Universal Windows Platform development`.
 
 You might not think that you'll need all three, but it's likely enough that some dependency will arise where they're required that we feel it's just simpler to select all three.
 
@@ -43,7 +44,7 @@ You might not think that you'll need all three, but it's likely enough that some
 
 Rust is installed via the [rustup](https://rustup.rs/) installer, which supports installation on Windows, macOS, and Linux.
 
-Rust follows a release cycle where stable, beta, and nightly channels are available for developers. 
+Rust follows a release cycle where stable, beta, and nightly channels are available for developers.
 
 > Rust nightly refers to a version of the Rust programming language that is under active development. It is called "nightly" because it is released on a daily basis.
 

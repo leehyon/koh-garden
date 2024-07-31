@@ -1,6 +1,7 @@
 ---
 title: Python for Data Science
 draft: false
+date: 2024-03-11
 tags:
   - conda
   - data-science
@@ -211,7 +212,7 @@ sudo apt install python3-pip
 
 ### Scrapy
 
-Scrapy is another library used for creating crawling programs. 
+Scrapy is another library used for creating crawling programs.
 
 ```shell
 conda install -c conda-forge scrapy

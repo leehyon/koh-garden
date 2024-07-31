@@ -1,5 +1,6 @@
 ---
 title: Alternatives to If-Else
+date: 2024-06-11
 draft: false
 tags:
   - gist

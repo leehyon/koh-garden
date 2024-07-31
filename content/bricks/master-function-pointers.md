@@ -1,6 +1,7 @@
 ---
 title: Master Function Pointers
 draft: false
+date: 2024-06-18
 tags:
   - pointer
   - gist
@@ -20,15 +21,15 @@ The syntax for declaring raw function pointer types in C is messy:
 
 ```c
 // DO NOT define your function pointer directly
-int16_t (*funcPtr)(int8_t); 
+int16_t (*funcPtr)(int8_t);
 // This is even worse
-int16_t OuterFunc(int16_t val, int16_t (*innerFunc)(int8_t)); 
+int16_t OuterFunc(int16_t val, int16_t (*innerFunc)(int8_t));
 ```
 
 A better approach is to **typedef** the function pointer:
 
 ```c
-typedef int16_t (*FuncType)(int8_t); 
+typedef int16_t (*FuncType)(int8_t);
 FuncType funcPtr;
 int16_t OuterFunc(int16_t val, FuncType innerFunc);
 ```
@@ -46,7 +47,7 @@ const FuncType funcPtr = YourFunction;
 Always check for `NULL` before calling a function pointer:
 
 ```c
-if (funcPtr != NULL) { 
+if (funcPtr != NULL) {
     int16_t result = funcPtr(args);
 }
 ```
@@ -55,7 +56,7 @@ When indexing function pointer arrays, validate the bounds:
 
 ```c
 if (index < 0 || index >= MAX_FUNCS) {
-    HandleError(); 
+    HandleError();
 }
 ```
 
@@ -103,7 +104,7 @@ const CommandFunc commands[] = {
     command1,
     command2,
     command3,
-    errorHandler // last entry is error handler 
+    errorHandler // last entry is error handler
 };
 
 void Dispatch(int8_t cmd) {
@@ -130,7 +131,7 @@ int16_t LoadPlugin(PluginInitFunc initFunc) {
 
 ## Conclusion
 
-With some care taken to use typedefs, validation, and bounds checking, function pointers can be used effectively in C without introducing bugs. They enable useful patterns like dispatch tables and callbacks while avoiding common pitfalls. 
+With some care taken to use typedefs, validation, and bounds checking, function pointers can be used effectively in C without introducing bugs. They enable useful patterns like dispatch tables and callbacks while avoiding common pitfalls.
 
 1. Use **typedefs** to define cleaner syntax for function pointer types. This makes the code more readable.
 2. Declare function pointers as **constant** whenever possible to prevent accidental modification.

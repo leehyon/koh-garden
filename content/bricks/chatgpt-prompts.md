@@ -1,6 +1,7 @@
 ---
 title: ChatGPT Prompts
 draft: false
+date: 2023-06-27
 tags:
   - chatgpt
 ---
@@ -76,7 +77,7 @@ A ChatGPT prompt is a phrase or instruction you give the ChatGPT AI model to gen
 
 ## R programming interpreter
 
-> I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}. 
+> I want you to act as a R interpreter. I'll type commands and you'll reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. Do not write explanations. Do not type commands unless I instruct you to do so. When I need to tell you something in English, I will do so by putting text inside curly brackets {like this}.
 
 ## StackOverflow post
 
@@ -93,4 +94,3 @@ A ChatGPT prompt is a phrase or instruction you give the ChatGPT AI model to gen
 ## Learn more
 
 - [Awesome ChatGPT Prompts](https://prompts.chat/)
-

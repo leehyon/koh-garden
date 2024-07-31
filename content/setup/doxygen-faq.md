@@ -1,5 +1,6 @@
 ---
 title: "Doxygen FAQ"
+date: 2024-07-12
 tags:
   - faq
   - doxygen
@@ -17,7 +18,7 @@ MACRO_EXPANSION        = YES
 EXPAND_ONLY_PREDEF     = YES
 PREDEFINED             = "FUNC(rettype,memclass)=rettype" \             
                          "VAR(type,memclass)=type" \
-                         "P2VAR(ptrtype,memclass,ptrclass)=ptrtype *" 
+                         "P2VAR(ptrtype,memclass,ptrclass)=ptrtype *"
 ```
 
 ### Learn more

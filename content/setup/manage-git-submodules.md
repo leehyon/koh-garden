@@ -1,13 +1,14 @@
 ---
 title: Manage Git Submodules
 draft: false
+date: 2024-07-10
 tags:
     - git
 ---
 
 > [!important]
-> If you make changes to a submodule's repository, be sure to commit and push those changes **separately**. Then, in your main project, commit the updated reference to the submodule. 
-> Submodules are indeed particularly well-suited for repositories that are **rarely updated** and **stable**. 
+> If you make changes to a submodule's repository, be sure to commit and push those changes **separately**. Then, in your main project, commit the updated reference to the submodule.
+> Submodules are indeed particularly well-suited for repositories that are **rarely updated** and **stable**.
 
 ## Common commands
 
@@ -19,9 +20,9 @@ git submodule add -b <branch> <url> <path>
 git submodule init
 git submodule update
 # Change the URL of a submodule
-git submodule set-url <path> <new-url> 
+git submodule set-url <path> <new-url>
 # Update .gitmodules after changes
-git submodule sync 
+git submodule sync
 ```
 
 To update the submodule to the latest commit, **navigate to the submodule directory** and use `git pull` or `git checkout <branch>` to update it.

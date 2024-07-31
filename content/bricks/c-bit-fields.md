@@ -1,6 +1,7 @@
 ---
 title: C Bit Fields
 draft: false
+date: 2024-06-11
 tags:
   - gist
 ---
@@ -10,7 +11,7 @@ tags:
 When programming close to the hardware, you often need to manipulate bits and flags efficiently. Doing this with bitwise operators and macros can get messy:
 
 ```c
-#define FLAG1 0x01 
+#define FLAG1 0x01
 #define FLAG2 0x02
 
 unsigned int flags = FLAG1 | FLAG2;
@@ -38,10 +39,10 @@ With bit fields, the code reads more like accessing normal struct members:
 ```c
 struct {
     unsigned int FLAG1 : 1;
-    unsigned int FLAG2 : 1; 
+    unsigned int FLAG2 : 1;
 } flags;
 
-flags.FLAG1 = 1; 
+flags.FLAG1 = 1;
 
 if (flags.FLAG1) {
     // do something for FLAG1

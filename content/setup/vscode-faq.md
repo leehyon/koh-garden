@@ -1,5 +1,6 @@
 ---
 title: "VS Code FAQ"
+date: 2024-07-10
 tags:
   - faq
 ---
@@ -28,7 +29,7 @@ VS Code supports variable substitution in **Debugging** and **Task** configurati
 
 ## How to define and use custom variables
 
-There are two methods: 
+There are two methods:
 
 1. Define your environment variables and reference them using `${env:VARIABLE_NAME}`.
 2. Add custom settings in `settings.json`, and reference those in `tasks.json` using `${config:myCustomVariable}`.

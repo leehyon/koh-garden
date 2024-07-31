@@ -1,5 +1,6 @@
 ---
 title: "Git FAQ"
+date: 2024-07-10
 tags:
   - faq
   - git
@@ -28,9 +29,6 @@ By default, Git will try to perform a "fast-forward" merge if possible. A fast-f
 This option `--no-ff` ensures that a merge commit is always created, even if the merge could be performed with a fast-forward. This helps keep the project's history more explicit and can make later code reviews or debugging easier.
 
 ## Git rebase
-
-> [!danger]
-> Using git rebase will change the commit IDs (hashes) of the rebased commits.
 
 > [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
@@ -104,14 +102,14 @@ git branch -m new-branch-name
 
 ```shell
 git stash
-git stash save "message" # Save changes with a descriptive message
-git stash pop # Reapply previously stashed changes
-git stash apply # Reapply changes but keep them in your stash
-git stash apply n # Reapply a specific stash with index n
+git stash save "message" # save changes with a descriptive message
+git stash pop # reapply previously stashed changes
+git stash apply # reapply changes but keep them in your stash
+git stash apply n # reapply a specific stash with index n
 git stash list
-git stash show # View a summary of a stash
-git stash show -p # View the full diff of a stash
-git stash drop n # Drop a specific stash with index n
+git stash show # view a summary of a stash
+git stash show -p # view the full diff of a stash
+git stash drop n # drop a specific stash with index n
 git stash clear # drop all stashes
 ```
 

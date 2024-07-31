@@ -1,10 +1,12 @@
 ---
 title: Linux Pocket Guide
 draft: false
+date: 2024-07-30
 tags:
   - linux
   - book
   - gist
+aliases:
 ---
 
 > [!tldr]
@@ -20,7 +22,7 @@ tags:
 | `wc --help`       | Many Linux commands respond to the option `--help` |
 
 - If the output is longer than the screen, pipe it into the `less` program to display it in pages.
-- Your friend, the echo command: `echo My name is $USER`.
+- Your friend, the `echo` command: `echo My name is $USER`.
 
 ## Linux: A first view
 
@@ -29,6 +31,11 @@ tags:
   2. Supplied programs
   3. The shell
   4. X
+
+- To determine the version of the Linux operating system:
+  - `cat /etc/*release`
+  - `uname -a`
+  - `hostnamectl`
 
 - In Linux, all files and directories descend from the root (`/`).
 
@@ -49,8 +56,11 @@ tags:
   - `cat /proc/version`
 - To see the ownership and permissions of a directory, add the `-d` option.
   - `ls -ld mydir`
-- `-rwxr-x---` means a file (`-`) that can be read (`r`), written (`w`), and executed (`x`) by the owner, read and executed by the group, and not accessed at all by other users.
+  - `-rwxr-x---` means a file (`-`) that can be read (`r`), written (`w`), and executed (`x`) by the owner, read and executed by the group, and not accessed at all by other users.
 - To see who’s logged into the computer, type `who`.
+- To change password of current user, type `passwd`.
+- To display hostname of the system, type `hostname`.
+- To list all processes sorted by their current system resource usage, type `top`.
 
 ## Shell features
 
@@ -62,7 +72,7 @@ tags:
   - Backquotes cause their contents to be evaluated as a shell command.
   - A dollar sign and parentheses are equivalent to backquotes.
 - A job is simply the shell's unit of work.
-  - Jobs are at a higher level than Linux processes; the Linux operating system knows nothing about them.
+  - Jobs are at a higher level than Linux processes, the Linux operating system knows nothing about them.
   - Type `^Z` in a shell, while a job is running in the foreground, will suspend that job. It simply stops running, but its state is remembered.
     - Now you're ready to type `bg` to put the command into the background, or `fg` to resume it in the foreground. You could also leave it suspended and run other commands.
   - Type `^C` to kill a command running in the foreground immediately.
@@ -82,4 +92,26 @@ history 10
 history -c # Clear (delete) your history
 jobs
 bg %2
+```
+
+## File operations
+
+- Use `ls` to list files in a directory.
+  - The `-a` option displays all files
+  - The `-l` option produces a long listing
+  - The `-S` option sorts files by their size
+  - The `-t` option sorts files by the time they were last modified
+
+- Use `cp` to copy a file.
+  - The `-a` or `-r` option for recursively copying directories
+
+- Use `cat` to view files in their entirety.
+- Use `less` to view text files one page at a time.
+- Use `head` to view the first lines of a text file.
+- Use `tail` to view the last lines of a text file.
+
+```bash
+find /var/www -name '*.css' # find files by name
+grep font /var/www/html/style.css # find files containing text
+grep -R font /var/www/html/ # grep recursively for a directory
 ```

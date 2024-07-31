@@ -1,5 +1,6 @@
 ---
 title: Environment Variables
+date: 2024-07-10
 tags:
   - windows
   - linux
@@ -55,7 +56,7 @@ To make environment variables persistent you need to define those variables in t
 - `/etc/profile` - Variables set in this file are loaded whenever a bash login shell is entered. When declaring environment variables in this file you need to use the `export` command: `export JAVA_HOME="/path/to/java/home"`
 - `~/.bashrc` - Per-user shell (Bash) specific configuration files
 
-To load the new environment variables into the current shell session use the `source` command: 
+To load the new environment variables into the current shell session use the `source` command:
 
 ```bash
 source ~/.bashrc

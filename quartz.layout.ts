@@ -32,7 +32,12 @@ export const defaultContentPageLayout: PageLayout = {
       Component.RecentNotes({
         title: "Recent Notes",
         limit: 3,
-        filter: (f) => f.slug!.startsWith("bricks/") || f.slug!.startsWith("setup/"),
+        filter: (f) => {
+          const slug = f.slug!;
+          const isBricksSlug = slug.startsWith("bricks/") && slug !== "bricks/index";
+          const isSetupSlug = slug.startsWith("setup/") && slug !== "setup/index";
+          return isBricksSlug || isSetupSlug;
+        },
         linkToMore: "bricks/" as SimpleSlug,
       }),
     ),

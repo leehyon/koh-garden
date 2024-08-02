@@ -172,3 +172,58 @@ git tag -a v0.0.1
 git push origin main
 git push origin v0.0.1
 ```
+
+## Undo a git rebase
+
+### The short answer
+
+First, use `git reflog` to find the commit where your branch was before the rebase started.
+
+This command will show a list of recent actions in your repository. Look for the entry that indicates the start of the rebase.
+
+```shell
+222967b (HEAD -> main) HEAD@{0}: rebase (finish): returning to refs/heads/main
+222967b (HEAD -> main) HEAD@{1}: rebase (squash): My big rebase
+c388f0c HEAD@{2}: rebase (squash): # This is a combination of 20 commits
+56ee04d HEAD@{3}: rebase (start): checkout HEAD~20
+0a0f875 HEAD@{4}: commit: An old good commit
+```
+
+In this example, `HEAD@{3}` represents the start of the rebase, and `HEAD@{4}` is the commit before the rebase started.
+
+Once you have identified the correct commit, reset your branch to that state:
+
+```shell
+git reset --hard HEAD@{4}
+```
+
+### Use the `ORIG_HEAD` pointer
+
+Alternatively, when performing a rebase, git saves your starting point before the rebase as `ORIG_HEAD`.
+
+This means that you can also use the following command:
+
+```shell
+git reset --hard ORIG_HEAD
+```
+
+> [!note]
+> It must be noted however that the `git reset`, `git rebase`, and `git merge` commands all save the original HEAD pointer into `ORIG_HEAD`. This means that if you have used any of these commands following the rebase, you will instead have to use the `git reflog` to identify how to reset the branch.
+
+## Recover a deleted branch
+
+First, use `git reflog` to find the commit of the last commit on the deleted branch. The reflog output will look something like this:
+
+```shell
+abc1234 (HEAD -> main) HEAD@{0}: commit: Some recent commit message
+def5678 HEAD@{1}: commit: Commit message from deleted branch
+```
+
+Then use the commit hash to create a new branch:
+
+```shell
+git checkout -b recovered-branch def5678
+```
+
+> [!tip]
+> Using pipelines to filter the output. For example in PowerShell: `git reflog | Where-Object { $_ -match "launch\.json" }`.

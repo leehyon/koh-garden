@@ -1,43 +1,56 @@
 ---
-title: Terminal File Managers for macOS
-draft: true
+title: Mac Terminal File Managers
+draft: false
 date: 2024-08-03
 tags:
   - mac
   - tool
   - terminal
 ---
+
 ## Motivation
 
-Terminal is most used tool for my daily work, sometimes I just want to navigate the files and folder directly on terminal, thus a terminal file manager is a neccesary consideration to improve my productivity and streamline my tasks.
-On Windows, I use `tere` for it, while shift to macOS I am looking an alternative to tere.
+The terminal is the most-used tool for my daily work. Sometimes, I just want to navigate files and folders directly within the terminal. Therefore, a Terminal File Manager (TFM) is a necessary consideration to improve my productivity and streamline my tasks. On Windows, I use [tere](https://github.com/mgunyho/tere) for this purpose. After shifting to macOS, I am looking for an alternative to tere.
 
 ## Popular TFMs for macOS
+
 There are several terminal file managers are recommended for macOS:
+
 ### Ranger
+
 - [Ranger](https://ranger.github.io) is a versatile file manager with Vim-like keybindings
-- Perl, very old
+- Written in Perl, very old
 - Customizable through Python scripts
+
 ### nnn
+
 - [nnn](https://github.com/jarun/nnn) is a fast and lightweight file manager
-- Tiny and nearly 0-config
+- Tiny and requires nearly 0-config
+
 ### Lf
+
 - [Lf](https://github.com/gokcehan/lf) stands for "List files"
 - Written in Go, lightweight
+
 ### Yazi
+
 - [Yazi](https://github.com/sxyazi/yazi) is a newer option written in Rust
 - Leveraging non-blocking async I/O
 - Modern and intuitive interface
 - Good documentation
+
 ## Getting started
+
 To install these tools on macOS, you can use package managers like Homebrew.
+
 ```shell
 brew install nnn
 ```
 After installation, simply type the name of the file manager in your terminal to launch it.
-Some of the other useful shortcuts are:
 
-|     |                                                                                                                                                                                                  |
+Some of the other useful shortcuts for nnn are:
+
+|Shortcut | Utility                                                                                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | .   | toggle hidden files                                                                                                                                                                              |
 | d   | toggle detail mode (show size, permissions and timestamps)                                                                                                                                       |
@@ -50,11 +63,17 @@ Some of the other useful shortcuts are:
 | ^T  | toggle sort order (`d` enables the du (disk usage) mode where you can see the size of directories)                                                                                               |
 | ]   | command prompt (`^]` for shell)                                                                                                                                                                  |
 | ?   | get help on all the keyboard shortcuts and configuration                                                                                                                                         |
+
 ## Configure cd on quit
+
+### Ranger
+
+If you hit `Shift + S`, it opens a new shell on the current directory. Then if you hit `Ctrl + D` on the shell, it goes back to `ranger`. This workaround is often good enough.
+
 ### nnn
-To set this up, place the following code in `~/.zshrc` file.
-This creates a new alias `n` for launching `nnn`. When launched with the new alias `n`, your terminal directory will be changed on quitting `nnn`.
-You can find more details on this [here](https://github.com/jarun/nnn/wiki/Basic-use-cases#configure-cd-on-quit).
+
+To set this up, place the following code in `~/.zshrc` file. This creates a new alias `n` for launching `nnn`. When launched with the new alias `n`, your terminal directory will be changed on quitting `nnn`.
+
 ```shell
 n ()
 {
@@ -87,12 +106,13 @@ n ()
     }
 }
 ```
-### Ranger
-If you hit `Shift + S`, it opens a new shell on the current directory.
-Then if you hit `Ctrl + D` on the shell, it goes back to `ranger`.
-This workaround is often good enough.
+
+You can find more details [here](https://github.com/jarun/nnn/wiki/Basic-use-cases#configure-cd-on-quit).
+
 ### Yazi
-Using this `yy` shell wrapper that provides the ability to change the current working directory when exiting Yazi.
+
+Use the following `yy` shell wrapper that provides the ability to change the current working directory when exiting Yazi.
+
 ```shell
 function yy() {  
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"  
@@ -103,7 +123,11 @@ function yy() {
 	rm -f -- "$tmp"  
 }
 ```
+
 To use it, copy the function into the configuration file of your respective shell. Then use `yy` instead of `yazi` to start.
-You can fine more details on [here](https://yazi-rs.github.io/docs/quick-start#shell-wrapper)
+
+You can fine more details [here](https://yazi-rs.github.io/docs/quick-start#shell-wrapper).
+
 ## Learn more
-- https://umaranis.com/2023/09/07/setup-nnn-terminal-file-manager-on-macos/
+
+- [Setup nnn on MacOS](https://umaranis.com/2023/09/07/setup-nnn-terminal-file-manager-on-macos/)

@@ -1,5 +1,5 @@
 ---
-title: Mac Terminal File Managers
+title: Mac Terminal File Explorer
 draft: false
 date: 2024-08-03
 tags:
@@ -46,6 +46,7 @@ To install these tools on macOS, you can use package managers like Homebrew.
 ```shell
 brew install nnn
 ```
+
 After installation, simply type the name of the file manager in your terminal to launch it.
 
 Some of the other useful shortcuts for nnn are:

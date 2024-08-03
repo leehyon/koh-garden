@@ -26,4 +26,8 @@ Save the file and restart your terminal or run `source ~/.zshrc` to apply the 
 
 ## Terminal file manager
 
-Please refer to [[mac-terminal-file-managers|this article]] for additional information.
+Please refer to [[mac-terminal-file-explorer|this article]] for additional information.
+
+## Learn more
+
+- [macOS Terminal Tools](https://terminaltrove.com/categories/macos/)

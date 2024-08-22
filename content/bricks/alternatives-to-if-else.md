@@ -52,7 +52,7 @@ Useful for selecting behavior based on conditions:
 ```c
 typedef void (*FuncType)();
 
-FuncType funcTable[] = {func1, func2, func3};
+FuncType funcTable[] = {Func1, Func2, Func3};
 
 int index = GetIndex(); // Determine which function to call
 funcTable[index](); // Call the appropriate function
@@ -68,5 +68,6 @@ if (flags & FLAG_A) {
     // Action for FLAG_A
 }
 ```
+
 > [!summary]
 > Each of these alternatives has its own use cases and trade-offs. The choice depends on the specific requirements of your program, readability considerations, and performance needs.

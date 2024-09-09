@@ -94,3 +94,4 @@ A ChatGPT prompt is a phrase or instruction you give the ChatGPT AI model to gen
 ## Learn more
 
 - [Awesome ChatGPT Prompts](https://prompts.chat/)
+- [DEV ChatGPT Prompts](https://github.com/PickleBoxer/dev-chatgpt-prompts)

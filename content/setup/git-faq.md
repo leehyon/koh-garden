@@ -227,3 +227,19 @@ git checkout -b recovered-branch def5678
 
 > [!tip]
 > Using pipelines to filter the output. For example in PowerShell: `git reflog | Where-Object { $_ -match "launch\.json" }`.
+
+## Git diff
+
+The `git diff` command does not show **untracked** files by default. This is because untracked files are not part of the version control system until they are added to the staging area. 
+
+Make it a habit to run `git diff` before committing changes. 
+
+- `git diff > diff_output.txt` to save the diff output.
+
+- `git diff <commit1> <commit2>` to see the differences between two specific commits.
+
+- `git show`
+
+- `git log -p`
+
+[delta](https://dandavison.github.io/delta/introduction.html): A syntax-highlighting pager for git, diff, and grep output
